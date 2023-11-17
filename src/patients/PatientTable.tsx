@@ -9,6 +9,8 @@ import {
 import {Box, IconButton, Tooltip} from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import {keepPreviousData, useQuery,} from '@tanstack/react-query';
+import {Link} from "react-router-dom";
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 type Patient = {
     id: number;
@@ -70,6 +72,7 @@ const PatientTable = () => {
         manualFiltering: false,
         manualPagination: false,
         manualSorting: false,
+        enableStickyHeader: true,
         muiToolbarAlertBannerProps: isError
             ? {
                 color: 'error',
@@ -97,6 +100,16 @@ const PatientTable = () => {
             showProgressBars: isRefetching,
             sorting,
         },
+        enableRowActions: true,
+        renderRowActions: (row) => (
+            <Tooltip arrow title="View details">
+                <Link to={`/patients/${row.row.original.id}`}>
+                    <IconButton>
+                        <VisibilityIcon/>
+                    </IconButton>
+                </Link>
+            </Tooltip>
+        ),
     });
 
     return <Box margin={2}>
