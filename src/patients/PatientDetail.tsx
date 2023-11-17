@@ -45,14 +45,11 @@ const PatientDetail = () => {
             <div style={{display: 'flex', alignItems: 'center', marginTop: '20px'}}>
 
                 <div>
-                    <Typography variant="h4" color="primary" gutterBottom>
-                        {data.id}
+                    <Typography variant="h4" color="textSecondary">
+                        {data.firstName} {data.lastName}
                     </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                        First name: {data.firstName}
-                    </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                        Last name: {data.lastName}
+                    <Typography variant="h6" color="primary" gutterBottom>
+                        ID : {data.id}
                     </Typography>
                     <Typography variant="h6" color="textSecondary">
                         Age: {data.age}

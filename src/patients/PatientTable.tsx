@@ -63,12 +63,20 @@ const PatientTable = () => {
             accessorKey: 'lastName',
             header: 'Last Name',
         },
+        {
+            accessorKey: 'age',
+            header: 'Age',
+        },
+        {
+            accessorKey: 'sex',
+            header: 'Sex'
+        }
 
     ];
     const table = useMaterialReactTable({
         columns,
         data,
-        initialState: {showColumnFilters: true},
+        initialState: {showColumnFilters: true, columnVisibility: {age: false, sex: false}},
         manualFiltering: false,
         manualPagination: false,
         manualSorting: false,
