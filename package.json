@@ -28,6 +28,7 @@
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
 		"@types/jest": "^27.5.2",
+		"cypress": "^13.5.1",
 		"json-server": "^0.17.4"
 	},
 	"scripts": {
@@ -35,7 +36,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"api": "json-server --watch json-server/patients.json --port 3001"
+		"api": "json-server --watch json-server/patients.json --port 3001 --host 0.0.0.0"
 	},
 	"eslintConfig": {
 		"extends": [

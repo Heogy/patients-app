@@ -98,6 +98,7 @@ const LoginPage = () => {
                     onChange={handleInputChange}
                     error={!!validationErrors.username}
                     helperText={validationErrors.username}
+                    data-cy={"username-input"}
 
 
                 />
@@ -112,6 +113,7 @@ const LoginPage = () => {
                     onChange={handleInputChange}
                     error={!!validationErrors.password}
                     helperText={validationErrors.password}
+                    data-cy={"password-input"}
                 />
                 <Button
                     type="submit"
@@ -119,6 +121,7 @@ const LoginPage = () => {
                     variant="contained"
                     color="primary"
                     style={submitButtonStyle}
+                    data-cy={"login-submit-button"}
                 >
                     Login
                 </Button>

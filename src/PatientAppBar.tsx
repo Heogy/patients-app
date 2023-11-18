@@ -20,13 +20,13 @@ export default function PatientAppBar() {
                         <Link to="/login" style={{
                             color: 'white',
                         }}>
-                            <Button color='inherit'>Login</Button>
+                            <Button color='inherit' data-cy='login-button'>Login</Button>
                         </Link>}
                     {authContextProps.user &&
                         <Link to="/login" style={{
                             color: 'white',
                         }}>
-                            <Button color='inherit' onClick={handleLogout}>Logout</Button>
+                            <Button color='inherit' onClick={handleLogout} data-cy={'logout-button'}>Logout</Button>
                         </Link>}
                 </Toolbar>
             </AppBar>
