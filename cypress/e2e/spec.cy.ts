@@ -1,0 +1,16 @@
+describe('template spec', () => {
+    it('passes', () => {
+        cy.visit('http://localhost:3000')
+        cy.dataCy('login-button').click()
+        cy.dataCy('username-input').type('test')
+        cy.dataCy('password-input').type('test')
+        cy.dataCy('login-submit-button').click()
+        cy.get(':nth-child(4) > .css-lqn1oq-MuiTableCell-root > a > .MuiButtonBase-root').click()
+        cy.dataCy('patient-fullname').should('contain', 'Fredrick Carter')
+        cy.dataCy('patient-id').should('contain', '3')
+        cy.dataCy('patient-age').should('contain', '3')
+        cy.dataCy('patient-sex').should('contain', 'male')
+        cy.dataCy('back-to-patients-button').click()
+        cy.dataCy('logout-button').click()
+    })
+})
