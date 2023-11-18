@@ -13,11 +13,8 @@ export default function PatientAppBar() {
         <Box sx={{flexGrow: 1}}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography variant="h6" component="div" sx={{flexGrow: 12}}>
+                    <Typography variant="h6" component="div" sx={{flexGrow: 2}}>
                         Patient List
-                    </Typography>
-                    <Typography variant="body1" component="div" sx={{flexGrow: 1}}>
-                        logged as {authContextProps.user?.username}
                     </Typography>
                     {!authContextProps.user &&
                         <Link to="/login" style={{
@@ -26,7 +23,11 @@ export default function PatientAppBar() {
                             <Button color='inherit'>Login</Button>
                         </Link>}
                     {authContextProps.user &&
-                        <Button color='inherit' onClick={handleLogout}>Logout</Button>}
+                        <Link to="/login" style={{
+                            color: 'white',
+                        }}>
+                            <Button color='inherit' onClick={handleLogout}>Logout</Button>
+                        </Link>}
                 </Toolbar>
             </AppBar>
         </Box>

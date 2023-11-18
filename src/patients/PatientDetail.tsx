@@ -36,14 +36,15 @@ const PatientDetail = () => {
     if (isError) return <Box>Something went wrong...</Box>;
 
     if (isLoading || !data) return (
-        <Box sx={{display: 'flex'}}>
-            <CircularProgress/>
-        </Box>
+        <div style={{display: 'flex', alignItems: 'center', marginTop: '20px'}}>
+            <Box sx={{display: 'flex'}}>
+                <CircularProgress/>
+            </Box>
+        </div>
     );
     return (
         <Container>
             <div style={{display: 'flex', alignItems: 'center', marginTop: '20px'}}>
-
                 <div>
                     <Typography variant="h4" color="textSecondary">
                         {data.firstName} {data.lastName}
